@@ -1,8 +1,4 @@
-# installations nécessaires
-!pip install facebook-sdk
-!pip install facebook-scraper
-
-# On fait les imports
+# On fait les imports, on considère que les librairies sont déjà installées
 import facebook
 from facebook_scraper import get_posts
 import pymongo
