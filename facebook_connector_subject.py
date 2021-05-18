@@ -79,7 +79,7 @@ if __name__ == '__main__':
 	try:
 		deces_chirac.insert_many(final_posts)
 	except:
-		print("Error obtained we couldn't do the insertions, may there's no data")
+		print("Error obtained we couldn't do the insertions, may be there's no data")
 
 
 
