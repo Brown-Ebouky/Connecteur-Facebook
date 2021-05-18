@@ -53,8 +53,10 @@ Cette fonction renvoie la liste des posts qui correspondants au critère.
 def post_scrapper(topic = "le décès du président Jacques Chirac", page):
 	listposts = []
 	for post in get_posts(page, pages=20, options={"comments": True}):
+
     	if topic in post['text']: 
         	listposts.append(post)
+        	
     return listposts
 
 
