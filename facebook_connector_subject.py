@@ -19,7 +19,7 @@ Les données récupérées sont le message du poste, les commentaires, et les pr
 Cette fonction renvoie la liste des posts qui correspondants au critère.
 
 """
-def main(topic = "le décès du président Jacques Chirac", page):
+def main(page, topic = "le décès du président Jacques Chirac"):
 	graph = facebook.GraphAPI(access_token = PAGE_TOKEN, version="10.0")
 	pages_data = graph.get_object(page)
 	page_id = pages_data["data"]["id"]
@@ -50,13 +50,11 @@ Le message du poste, les commentaires, et les probables photos sont contenues da
 
 Cette fonction renvoie la liste des posts qui correspondants au critère.
 """
-def post_scrapper(topic = "le décès du président Jacques Chirac", page):
-	listposts = []
-	for post in get_posts(page, pages=20, options={"comments": True}):
-
-    	if topic in post['text']: 
-        	listposts.append(post)
-        	
+def post_scrapper(page, topic = "le décès du président Jacques Chirac"):
+    listposts = []
+    for post in get_posts(page, pages=20, options={"comments": True}):
+        if topic in post['text']: 
+            listposts.append(post)
     return listposts
 
 
