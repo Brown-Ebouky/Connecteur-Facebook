@@ -64,8 +64,8 @@ décès de chirac puis on insère dans la base de données.
 """
 if __name__ == '__main__':
 	
-	final_posts = main(page="kaisens")
-	# final_posts = post_scrapper(page="kaisens")
+	# final_posts = main(page="jchirac")
+	final_posts = post_scrapper(page="jchirac")
 	
 	try:
 		conn = MongoClient()
