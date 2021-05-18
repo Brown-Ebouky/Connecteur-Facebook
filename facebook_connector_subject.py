@@ -49,8 +49,8 @@ Cette fonction renvoie la liste des posts qui correspondants au critère.
 def post_scrapper(page, topic = "le décès du président Jacques Chirac"):
     listposts = []
     for post in get_posts(page, pages=20, options={"comments": True}):
-        if topic in post['text']: 
-            listposts.append(post)
+    	if topic in post['text']:
+        	listposts.append(post)
     return listposts
 
 
@@ -76,7 +76,10 @@ if __name__ == '__main__':
 	deces_chirac = database["decesChirac"]
 
 	# insertion des posts qui parlent du décès de chirac
-	deces_chirac.insert_many(final_posts)
+	try:
+		deces_chirac.insert_many(final_posts)
+	except:
+		print("Error obtained we couldn't do the insertions, may there's no data")
 
 
 
